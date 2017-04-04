@@ -10,6 +10,7 @@ from flask import render_template, request, redirect, url_for, jsonify
 from bs4 import BeautifulSoup
 import requests
 import urlparse
+from image_getter import images
 
 ###
 # Routing for your application.
@@ -30,6 +31,10 @@ def send_text_file(file_name):
     """Send your static text file."""
     file_dot_text = file_name + '.txt'
     return app.send_static_file(file_dot_text)
+
+@app.route('/api/thumbnails', methods=['GET'])
+def thumbnails():
+        return jsonify({'error':None, 'message':'Success', 'thumbnails':images()})
 
 
 @app.after_request
