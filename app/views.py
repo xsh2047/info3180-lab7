@@ -36,6 +36,9 @@ def send_text_file(file_name):
 def thumbnails():
         return jsonify({'error':None, 'message':'Success', 'thumbnails':images()})
 
+@app.route('/thumbnails/view')
+def thumbnails_view():
+    return render_template('thumbnails.html')
 
 @app.after_request
 def add_header(response):

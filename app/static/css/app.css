@@ -5,3 +5,8 @@ body {
 .nav-tabs {
     margin-bottom: 15px;
 }
+
+img{
+    float: left;
+    margin: 2em;
+}
